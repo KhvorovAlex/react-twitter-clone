@@ -73,7 +73,7 @@ const useStylesSignIn = makeStyles(() => ({
     },
 }))
 
-export const SignIn = () => {
+export const SignIn: React.FC = (): React.ReactElement => {
     const classes = useStylesSignIn()
     const [visibleModal, setVisibleModal] = React.useState<'login' | 'register'>()
 
