@@ -1,11 +1,16 @@
-import { makeStyles, Typography } from '@material-ui/core'
-import TwitterIcon from '@material-ui/icons/Twitter'
-import SearchIcon from '@material-ui/icons/Search'
-import PeopleIcon from '@material-ui/icons/PeopleOutline'
-import MessageIcon from '@material-ui/icons/ModeCommentOutlined'
+//libraries
 import React from 'react'
+import { makeStyles } from '@material-ui/core'
+//components
+import { Button, Typography } from '@material-ui/core'
+import MessageIcon from '@material-ui/icons/ModeCommentOutlined'
+import PeopleIcon from '@material-ui/icons/PeopleOutline'
+import SearchIcon from '@material-ui/icons/Search'
+import TwitterIcon from '@material-ui/icons/Twitter'
+import { ModalBlockLogin } from '../components/ModalBlockLogin'
+import { ModalBlockRegister } from '../components/ModalBlockRegister'
 
-const useStyles = makeStyles((theme) => ({
+const useStylesSignIn = makeStyles(() => ({
     wrapper: {
         display: 'flex',
         height: '100vh',
@@ -66,47 +71,89 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 60,
         marginTop: 20,
     },
-    loginSideField: {
-        marginBottom: 18,
-    },
-    registerField: {
-        marginBottom: theme.spacing(5),
-    },
-    loginFormControl: {
-        marginBottom: theme.spacing(2),
-    },
 }))
 
-function SignIn() {
-    const classes = useStyles()
+export const SignIn = () => {
+    const classes = useStylesSignIn()
+    const [visibleModal, setVisibleModal] = React.useState<'login' | 'register'>()
+
+    const handleClickLoginButton = (): void => {
+        setVisibleModal('login')
+    }
+
+    const handleClickRegisterButton = (): void => {
+        setVisibleModal('register')
+    }
+
+    const handleCliclCloseModal = (): void => {
+        setVisibleModal(undefined)
+    }
 
     return (
-        <div>
+        <div className={classes.wrapper}>
             <section className={classes.blueSide}>
-                <TwitterIcon color="primary" className={classes.blueSideBigIcon} />
+                <TwitterIcon color='primary' className={classes.blueSideBigIcon} />
                 <ul className={classes.blueSideListInfo}>
                     <li className={classes.blueSideListInfoItem}>
-                        <Typography variant="h6">
+                        <Typography variant='h6'>
                             <SearchIcon className={classes.blueSideListInfoIcon} />
                             Читайте о том, что вам интересно.
                         </Typography>
                     </li>
                     <li className={classes.blueSideListInfoItem}>
-                        <Typography variant="h6">
+                        <Typography variant='h6'>
                             <PeopleIcon className={classes.blueSideListInfoIcon} />
                             Узнайте, о чем говорят в мире.
                         </Typography>
                     </li>
                     <li className={classes.blueSideListInfoItem}>
-                        <Typography variant="h6">
+                        <Typography variant='h6'>
                             <MessageIcon className={classes.blueSideListInfoIcon} />
                             Присоединяйтесь к общению.
                         </Typography>
                     </li>
                 </ul>
             </section>
+
+            <section className={classes.loginSide}>
+                <div className={classes.loginSideWrapper}>
+                    <TwitterIcon color='primary' className={classes.loginSideTwitterIcon} />
+                    <Typography className={classes.loginSideTitle} gutterBottom variant='h4'>
+                        Узнайте, что происходит в мире прямо сейчас
+                    </Typography>
+                    <Typography>
+                        <b>Присоединяйтесь к Твиттеру прямо сейчас!</b>
+                    </Typography>
+                    <br />
+                    <Button
+                        onClick={handleClickRegisterButton}
+                        style={{ marginBottom: 20 }}
+                        variant='contained'
+                        color='primary'
+                        fullWidth
+                    >
+                        Зарегистрироваться
+                    </Button>
+                    <Button
+                        onClick={handleClickLoginButton}
+                        variant='outlined'
+                        color='primary'
+                        fullWidth
+                    >
+                        Войти
+                    </Button>
+                </div>
+            </section>
+
+            {/* окно логинизации */}
+            {visibleModal === 'login' && (
+                <ModalBlockLogin visible={true} onClose={handleCliclCloseModal} />
+            )}
+
+            {/* окно регистрации */}
+            {visibleModal === 'register' && (
+                <ModalBlockRegister visible={true} onClose={handleCliclCloseModal} />
+            )}
         </div>
     )
 }
-
-export default SignIn

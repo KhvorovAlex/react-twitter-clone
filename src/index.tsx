@@ -1,15 +1,16 @@
+//libraries
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
 import { ThemeProvider } from '@material-ui/core'
 import theme from './theme'
+//css
+import './index.css'
+//component
+import App from './App'
 
 ReactDOM.render(
-    <React.StrictMode>
-        <ThemeProvider theme={theme}>
-            <App />
-        </ThemeProvider>
-    </React.StrictMode>,
-    document.getElementById('root'),
+    <ThemeProvider theme={theme}>
+        <App />
+    </ThemeProvider>,
+    document.getElementById('root')
 )

@@ -1,10 +1,11 @@
+//libraries
 import React from 'react'
-
-import SignIn from './pages/SignIn'
+//components
+import { SignIn } from './pages/SignIn'
 
 function App() {
     return (
-        <div className="App">
+        <div className='App'>
             <SignIn />
         </div>
     )
