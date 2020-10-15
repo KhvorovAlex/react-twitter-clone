@@ -80,47 +80,45 @@ const useStylesSideMenu = makeStyles(theme => ({
     },
 }))
 
-export const SideMenu = () => {
+export const SideMenu: React.FC = (): React.ReactElement => {
     const classes = useStylesSideMenu()
 
     return (
-        <div>
-            <ul className={classes.sideMenuList}>
-                <li className={classes.sideMenuListItem}>
-                    <Link to='/home'>
-                        <IconButton className={classes.logo} aria-label='' color='primary'>
-                            <TwitterIcon className={classes.logoIcon} />
-                        </IconButton>
-                    </Link>
-                </li>
+        <ul className={classes.sideMenuList}>
+            <li className={classes.sideMenuListItem}>
+                <Link to='/home'>
+                    <IconButton className={classes.logo} aria-label='' color='primary'>
+                        <TwitterIcon className={classes.logoIcon} />
+                    </IconButton>
+                </Link>
+            </li>
 
-                {menuItems.map(({ title, Img }) => (
-                    <li key={title} className={classes.sideMenuListItem}>
-                        <div>
-                            <Img className={classes.sideMenuListItemIcon} />
-                            <Hidden smDown>
-                                <Typography className={classes.sideMenuListItemLabel} variant='h6'>
-                                    {title}
-                                </Typography>
-                            </Hidden>
-                        </div>
-                    </li>
-                ))}
-
-                <li className={classes.sideMenuListItem}>
-                    <Button
-                        className={classes.sideMenuTweetButton}
-                        variant='contained'
-                        color='primary'
-                        fullWidth
-                    >
-                        <Hidden smDown>Твитнуть</Hidden>
-                        <Hidden mdUp>
-                            <CreateIcon />
+            {menuItems.map(({ title, Img }) => (
+                <li key={title} className={classes.sideMenuListItem}>
+                    <div>
+                        <Img className={classes.sideMenuListItemIcon} />
+                        <Hidden smDown>
+                            <Typography className={classes.sideMenuListItemLabel} variant='h6'>
+                                {title}
+                            </Typography>
                         </Hidden>
-                    </Button>
+                    </div>
                 </li>
-            </ul>
-        </div>
+            ))}
+
+            <li className={classes.sideMenuListItem}>
+                <Button
+                    className={classes.sideMenuTweetButton}
+                    variant='contained'
+                    color='primary'
+                    fullWidth
+                >
+                    <Hidden smDown>Твитнуть</Hidden>
+                    <Hidden mdUp>
+                        <CreateIcon />
+                    </Hidden>
+                </Button>
+            </li>
+        </ul>
     )
 }

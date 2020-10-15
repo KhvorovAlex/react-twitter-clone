@@ -1,13 +1,20 @@
 //libraries
 import React from 'react'
-//style
-import { useHomeStyles } from './useHomeStyle'
+import { makeStyles } from '@material-ui/core'
 //components
-import { Container, Grid, Paper, Typography } from '@material-ui/core'
-import { SideMenu } from '../../components/SideMenu'
+import { Container, Grid } from '@material-ui/core'
+import { SideMenu } from '../components/Home/SideMenu'
+import { RightBlock } from '../components/Home/RightBlock'
+import { TwitsBlock } from '../components/Home/TwitsBlock'
+
+const useStylesHome = makeStyles(() => ({
+    wrapper: {
+        height: '100vh',
+    },
+}))
 
 export const Home = () => {
-    const classes = useHomeStyles()
+    const classes = useStylesHome()
 
     return (
         <Container className={classes.wrapper} maxWidth='lg'>
@@ -15,12 +22,13 @@ export const Home = () => {
                 <Grid sm={1} md={3} item>
                     <SideMenu />
                 </Grid>
+
                 <Grid sm={8} md={6} item>
-                    середина
+                    <TwitsBlock />
                 </Grid>
 
                 <Grid sm={3} md={3} item>
-                    3 столбец
+                    <RightBlock />
                 </Grid>
             </Grid>
         </Container>

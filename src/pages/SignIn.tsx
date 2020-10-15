@@ -7,8 +7,8 @@ import MessageIcon from '@material-ui/icons/ModeCommentOutlined'
 import PeopleIcon from '@material-ui/icons/PeopleOutline'
 import SearchIcon from '@material-ui/icons/Search'
 import TwitterIcon from '@material-ui/icons/Twitter'
-import { ModalBlockLogin } from '../components/ModalBlockLogin'
-import { ModalBlockRegister } from '../components/ModalBlockRegister'
+import { ModalBlockLogin } from '../components/SignIn/ModalBlockLogin'
+import { ModalBlockRegister } from '../components/SignIn/ModalBlockRegister'
 
 const useStylesSignIn = makeStyles(() => ({
     wrapper: {

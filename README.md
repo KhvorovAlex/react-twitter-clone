@@ -7,6 +7,8 @@
 -   TypeScript
 -   ReactJS
 -   Material UI
+-   React Router
+-   classnames
 
 **Hooks:**
 
