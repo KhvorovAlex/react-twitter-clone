@@ -60,14 +60,29 @@ const useStyleAddTweetForm = makeStyles(theme => ({
     },
 }))
 
-export const AddTweetForm: React.FC = (): React.ReactElement => {
+interface AddTweetFormProps {
+    maxRows?: number
+}
+
+const MAX_LENGHT = 280
+
+export const AddTweetForm: React.FC<AddTweetFormProps> = ({
+    maxRows,
+}: AddTweetFormProps): React.ReactElement => {
     const classes = useStyleAddTweetForm()
 
     const [text, setText] = React.useState<string>('')
-    const handleChangeTextArea = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    const textLimitPercent = Math.round((text.length / MAX_LENGHT) * 100)
+    const textCount = MAX_LENGHT - text.length
+
+    const handleChangeTextArea = (e: React.FormEvent<HTMLTextAreaElement>): void => {
         if (e.currentTarget) {
             setText(e.currentTarget.value)
         }
+    }
+
+    const handleClickAddTweet = (): void => {
+        setText('')
     }
 
     return (
@@ -83,6 +98,7 @@ export const AddTweetForm: React.FC = (): React.ReactElement => {
                     className={classes.addFormTextarea}
                     placeholder='Что происходит?'
                     value={text}
+                    rowsMax={maxRows}
                 />
             </div>
             <div className={classes.addFormBottom}>
@@ -95,21 +111,33 @@ export const AddTweetForm: React.FC = (): React.ReactElement => {
                     </IconButton>
                 </div>
                 <div className={classes.addFormBottomRight}>
-                    <>
-                        <span>280</span>
-                        <div className={classes.addFormCircleProgress}>
-                            <CircularProgress variant='static' size={20} thickness={5} value={25} />
-                            <CircularProgress
-                                style={{ color: 'rgba(0, 0, 0, 0.1)' }}
-                                variant='static'
-                                size={20}
-                                thickness={5}
-                                value={100}
-                            />
-                        </div>
-                    </>
-
-                    <Button color='primary' variant='contained'>
+                    {text && (
+                        <>
+                            <span>{textCount}</span>
+                            <div className={classes.addFormCircleProgress}>
+                                <CircularProgress
+                                    variant='static'
+                                    size={20}
+                                    thickness={5}
+                                    value={text.length > MAX_LENGHT ? 100 : textLimitPercent}
+                                    style={text.length > MAX_LENGHT ? { color: 'red' } : undefined}
+                                />
+                                <CircularProgress
+                                    style={{ color: 'rgba(0, 0, 0, 0.1)' }}
+                                    variant='static'
+                                    size={20}
+                                    thickness={5}
+                                    value={100}
+                                />
+                            </div>
+                        </>
+                    )}
+                    <Button
+                        onClick={handleClickAddTweet}
+                        disabled={text.length > MAX_LENGHT}
+                        color='primary'
+                        variant='contained'
+                    >
                         Твитнуть
                     </Button>
                 </div>

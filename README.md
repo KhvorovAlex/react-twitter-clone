@@ -9,6 +9,11 @@
 -   Material UI
 -   React Router
 -   classnames
+-   redux
+-   redux-saga
+-   reselect
+-   immer
+-   axios
 
 **Hooks:**
 

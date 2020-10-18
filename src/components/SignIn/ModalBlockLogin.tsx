@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core'
 import FormControl from '@material-ui/core/FormControl'
 import FormGroup from '@material-ui/core/FormGroup'
 import TextField from '@material-ui/core/TextField'
-import { ModalBlock } from './ModalBlock'
+import { ModalBlock } from '../ModalBlock'
 
 const useStylesSignIn = makeStyles(theme => ({
     loginSideField: {
