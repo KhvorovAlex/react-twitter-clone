@@ -19,3 +19,5 @@
 
 -   useState
 -   useEffect
+-   useDispatch
+-   useSelector

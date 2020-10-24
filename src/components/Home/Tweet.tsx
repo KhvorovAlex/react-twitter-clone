@@ -56,30 +56,40 @@ const useStylesTweet = makeStyles(theme => ({
     },
 }))
 
-export const Tweet: React.FC = (): React.ReactElement => {
+interface TweetProps {
+    _id: string
+    text: string
+    user: {
+        fullName: string
+        userName: string
+        avatarUrl: string
+    }
+}
+
+export const Tweet: React.FC<TweetProps> = ({
+    _id,
+    text,
+    user,
+}: TweetProps): React.ReactElement => {
     const classes = useStylesTweet()
 
     return (
-        <Link className={classes.tweetWrapper} to={`/home/tweet/id`}>
+        <Link className={classes.tweetWrapper} to={`/home/tweet/${_id}`}>
             <Paper className={classNames(classes.tweet, classes.tweetsHeader)} variant='outlined'>
                 <Avatar
                     className={classes.tweetAvatar}
-                    alt={`Аватарка пользователя Full name`}
-                    src={`avatarUrl`}
+                    alt={`Аватарка пользователя ${user.fullName}`}
+                    src={user.avatarUrl}
                 />
                 <div>
                     <Typography>
-                        <b>Full name</b>&nbsp;
-                        <span className={classes.tweetUserName}>@username</span>&nbsp;
+                        <b>{user.fullName}</b>&nbsp;
+                        <span className={classes.tweetUserName}>@{user.userName}</span>&nbsp;
                         <span className={classes.tweetUserName}>·</span>&nbsp;
                         <span className={classes.tweetUserName}>1 ч</span>
                     </Typography>
                     <Typography variant='body1' gutterBottom>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque magni,
-                        consequuntur veritatis alias delectus voluptates sapiente explicabo
-                        exercitationem, officiis reiciendis labore eos, excepturi eius soluta
-                        numquam sequi quod placeat et itaque porro nemo optio amet repellendus
-                        commodi. At, porro corporis!
+                        {text}
                     </Typography>
                     <div className={classes.tweetFooter}>
                         <div>

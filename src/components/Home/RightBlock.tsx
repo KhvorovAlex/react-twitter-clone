@@ -1,7 +1,10 @@
 //libraries
 import React from 'react'
-import { InputAdornment, Paper, Typography, withStyles, Theme, makeStyles } from '@material-ui/core'
+import { withStyles, Theme, makeStyles } from '@material-ui/core'
 //components
+import InputAdornment from '@material-ui/core/InputAdornment'
+import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper'
 import SearchIcon from '@material-ui/icons/SearchOutlined'
 import PersonAddIcon from '@material-ui/icons/PersonAddOutlined'
 import ListItem from '@material-ui/core/ListItem/ListItem'

@@ -1,0 +1,107 @@
+{
+    "tweets": [
+        {
+            "_id": "5f8c09b6c5a242cbb3ba8e1d",
+            "text": "In adipisicing esse anim deserunt do magna cupidatat sit. Reprehenderit fugiat magna dolore id elit fugiat anim adipisicing sint ullamco nisi laboris aliqua irure. Eiusmod et ullamco deserunt laboris reprehenderit qui deserunt enim consequat mollit consectetur sunt. Adipisicing incididunt esse duis amet. Amet adipisicing fugiat enim quis aliqua dolor Lorem laborum elit do.",
+            "user": {
+                "fullName": "Bonner Sandoval",
+                "userName": "Shirley",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+            }
+        },
+        {
+            "_id": "5f8c09b685080528cb2e5d60",
+            "text": "Commodo sint dolor tempor sit velit aute voluptate ipsum nostrud cillum dolor elit adipisicing nulla. Culpa minim ad id nostrud. Proident elit ea labore aliquip cillum magna magna fugiat minim. Lorem ipsum nulla cillum in mollit sit excepteur occaecat sunt aute qui. In incididunt reprehenderit consequat proident minim quis tempor id dolore est reprehenderit duis nostrud.",
+            "user": {
+                "fullName": "Patrice Best",
+                "userName": "Jaime",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+            }
+        },
+        {
+            "_id": "5f8c09b6f82fe6fca5f6a925",
+            "text": "Tempor irure ex mollit ea est ipsum elit dolore pariatur mollit. Velit reprehenderit ipsum fugiat laboris esse officia elit amet do cillum esse. Incididunt amet id anim et aute magna excepteur excepteur nostrud Lorem incididunt ut enim. Nisi culpa deserunt quis consequat reprehenderit exercitation velit ut non id et. Ea nisi et pariatur laborum do qui fugiat.",
+            "user": {
+                "fullName": "Estes Hart",
+                "userName": "Barker",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+            }
+        },
+        {
+            "_id": "5f8c09b67c29490d6121e15a",
+            "text": "Non velit non nisi et minim nulla est ullamco ad proident ipsum. Duis proident enim labore qui proident qui dolore pariatur. Est sunt aliqua ut pariatur fugiat pariatur velit ipsum pariatur duis pariatur ad. Amet Lorem amet consectetur enim veniam ad nisi enim excepteur occaecat velit. Aute non ut consequat amet ut mollit.",
+            "user": {
+                "fullName": "Loraine Barnes",
+                "userName": "Noble",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+            }
+        },
+        {
+            "_id": "5f8c09b6b04803435f377d78",
+            "text": "Velit duis non consequat id commodo magna nulla laborum occaecat id mollit. Ut officia exercitation aliqua id duis. Ex sint velit ut nostrud dolor laborum ipsum. Culpa culpa ex officia sint esse. Ex laboris ut consequat voluptate tempor aliqua non voluptate sit nostrud culpa est.",
+            "user": {
+                "fullName": "Whitfield Knowles",
+                "userName": "Margret",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+            }
+        },
+        {
+            "_id": "5f8c09b6e1d2555260a62f21",
+            "text": "Ullamco sit enim excepteur reprehenderit pariatur. Nulla quis dolor velit commodo est Lorem quis laborum anim. Sunt est est proident veniam est consectetur ut minim consequat proident minim nulla ullamco consequat. Proident consectetur occaecat cillum nostrud deserunt culpa consequat incididunt officia. Lorem culpa excepteur minim voluptate do eu adipisicing ea commodo sunt.",
+            "user": {
+                "fullName": "Imogene Chambers",
+                "userName": "Velez",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+            }
+        },
+        {
+            "_id": "5f8c09b61b6cedf94f3d7424",
+            "text": "Ut et sint aliqua Lorem fugiat in aute reprehenderit esse ullamco minim quis duis. Incididunt sit quis dolore culpa voluptate ea ullamco irure officia in. In id est enim consequat fugiat quis consectetur ullamco pariatur. Quis id excepteur nulla Lorem voluptate quis adipisicing. Fugiat id est ullamco sint aliquip ut excepteur culpa culpa est tempor sunt.",
+            "user": {
+                "fullName": "Dyer Taylor",
+                "userName": "Harrell",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+            }
+        },
+        {
+            "_id": "5f8c09b63270923ffc8170c6",
+            "text": "Deserunt cillum sunt in sit ipsum excepteur excepteur duis. Velit ipsum aliquip consectetur nostrud. Ad cupidatat est labore Lorem dolore aliquip laboris et ut amet enim. Irure sint consectetur ullamco excepteur sint sint. Dolor Lorem velit velit esse aute ad excepteur ea laborum reprehenderit.",
+            "user": {
+                "fullName": "Forbes Patel",
+                "userName": "Maude",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+            }
+        },
+        {
+            "_id": "5f8c09b6315d09eeefdbf2f3",
+            "text": "Id nisi et ullamco excepteur fugiat incididunt elit elit cupidatat excepteur aute dolor excepteur. Occaecat consectetur magna deserunt qui est voluptate commodo eu pariatur deserunt. Nisi fugiat laboris elit mollit labore aliquip culpa ad tempor nostrud et. Ut ea est nostrud adipisicing fugiat magna ea Lorem. Ullamco aliqua non esse labore culpa Lorem ad culpa eu incididunt amet.",
+            "user": {
+                "fullName": "Corina Carey",
+                "userName": "Whitney",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+            }
+        },
+        {
+            "_id": "5f8c09b668910cb4ae9de2f9",
+            "text": "Aute exercitation amet consectetur elit elit culpa sit. Minim nisi irure labore amet cupidatat cillum. Occaecat non ut voluptate incididunt dolore nisi enim irure est. Anim ipsum et adipisicing velit aute aute reprehenderit aliquip laboris exercitation commodo tempor. Laborum nostrud eiusmod nostrud Lorem commodo occaecat reprehenderit magna.",
+            "user": {
+                "fullName": "Park Spence",
+                "userName": "Patterson",
+                "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+            }
+        }
+    ],
+
+    "tags": [
+        { "_id": "5f8c01239b6315d09eeefdbf2f3", "name": "#Тэг1", "likesCount": 847 },
+        { "_id": "5f8c05yhs9b6315d09eeefdbf2f3", "name": "#Тэг2", "likesCount": 8210 },
+        { "_id": "5f8c09123b6315d09eeefdbf2f3", "name": "#Тэг3", "likesCount": 315 },
+        { "_id": "5f8c09b6adsfh315d09eeefdbf2f3", "name": "#Тэг4", "likesCount": 1325 }
+    ],
+
+    "currentUser": {
+        "fullName": "Khvorov Alexandr",
+        "userName": "AlexKh",
+        "avatarUrl": "https://avatars1.githubusercontent.com/u/67139971?s=460&u=5f2ee9216515ac52ac07fb732d48efe69114f600&v=4"
+    }
+}

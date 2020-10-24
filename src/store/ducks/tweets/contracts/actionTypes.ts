@@ -1,11 +1,6 @@
 import { Action } from 'redux'
+import { TweetsActionsType } from '../actionCreators'
 import { LoadingState, TweetsState } from './state'
-
-export enum TweetsActionsType {
-    SET_TWEETS = 'tweets/SET_TWEETS',
-    FETCH_TWEETS = 'tweets/FETCH_TWEETS',
-    SET_LOADING_STATE = 'tweets/SET_LOADING_STATE',
-}
 
 export interface SetTweetsActionIT extends Action<TweetsActionsType> {
     type: TweetsActionsType.SET_TWEETS

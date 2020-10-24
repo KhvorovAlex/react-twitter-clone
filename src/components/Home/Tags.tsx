@@ -1,12 +1,15 @@
 //libraries
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { makeStyles } from '@material-ui/core'
 //components
-import { makeStyles, Paper, Typography } from '@material-ui/core'
+import Paper from '@material-ui/core/Paper'
 import List from '@material-ui/core/List/List'
-import ListItem from '@material-ui/core/ListItem/ListItem'
-import ListItemText from '@material-ui/core/ListItemText/ListItemText'
-import Divider from '@material-ui/core/Divider/Divider'
+//actions
+import { fetchTags } from '../../store/ducks/tags/actionCreators'
+//selectors
+import { selectLoadingState, selectTagsItem } from '../../store/ducks/tags/selectors'
+import { Tag } from './Tag'
 
 const useStylesTags = makeStyles(() => ({
     rightSideBlock: {
@@ -28,29 +31,22 @@ const useStylesTags = makeStyles(() => ({
             fontWeight: 800,
         },
     },
-    rightSideBlockItem: {
-        cursor: 'pointer',
-        '& .MuiTypography-body1': {
-            fontWeight: 700,
-        },
-        '& .MuiListItemAvatar-root': {
-            minWidth: 50,
-        },
-        '& .MuiListItemText-root': {
-            margin: 0,
-        },
-        '&:hover': {
-            backgroundColor: '#edf3f6',
-        },
-        '& a': {
-            color: 'inherit',
-            textDecoration: 'none',
-        },
-    },
 }))
 
-export const Tags: React.FC = (): React.ReactElement => {
+export const Tags: React.FC = (): React.ReactElement | null => {
     const classes = useStylesTags()
+
+    const dispatch = useDispatch()
+    const tags = useSelector(selectTagsItem)
+    const isLoaded = useSelector(selectLoadingState)
+
+    React.useEffect(() => {
+        dispatch(fetchTags())
+    }, [dispatch])
+
+    if (!isLoaded) {
+        return null
+    }
 
     return (
         <Paper className={classes.rightSideBlock}>
@@ -58,25 +54,9 @@ export const Tags: React.FC = (): React.ReactElement => {
                 <b>Актуальные темы</b>
             </Paper>
             <List>
-                <React.Fragment>
-                    <ListItem className={classes.rightSideBlockItem}>
-                        <Link to={`/home/search?q=`}>
-                            <ListItemText
-                                primary={`name`}
-                                secondary={
-                                    <Typography
-                                        component='span'
-                                        variant='body2'
-                                        color='textSecondary'
-                                    >
-                                        Твитов: 0
-                                    </Typography>
-                                }
-                            />
-                        </Link>
-                    </ListItem>
-                    <Divider component='li' />
-                </React.Fragment>
+                {tags.map(tag => (
+                    <Tag key={tag._id} {...tag} />
+                ))}
             </List>
         </Paper>
     )

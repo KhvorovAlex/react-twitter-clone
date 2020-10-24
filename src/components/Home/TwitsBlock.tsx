@@ -2,17 +2,26 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core'
 import { Route } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 //components
 import { Paper } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import { BackButton } from './BackButton'
 import { Tweet } from './Tweet'
 import { AddTweetForm } from './AddTweetForm'
+//actions
+import { fetchTweets } from '../../store/ducks/tweets/actionCreators'
+//selectors
+import { selectTweetsItem, selectLoadingState } from '../../store/ducks/tweets/selectors'
+import Preloader from '../Preloader'
 
 const useStylesTwitsBlock = makeStyles(() => ({
     tweetsWrapper: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
         borderRadius: 0,
-        height: '100%',
+        minHeight: 'calc(100vh - 12px)',
         borderTop: '0',
         borderBottom: '0',
     },
@@ -23,7 +32,6 @@ const useStylesTwitsBlock = makeStyles(() => ({
     tweetsHeader: {
         display: 'flex',
         alignItems: 'center',
-        flex: 1,
         borderTop: '0',
         borderLeft: '0',
         borderRight: '0',
@@ -61,6 +69,14 @@ const useStylesTwitsBlock = makeStyles(() => ({
 export const TwitsBlock: React.FC = (): React.ReactElement => {
     const classes = useStylesTwitsBlock()
 
+    const dispatch = useDispatch()
+    const tweets = useSelector(selectTweetsItem)
+    const isLoaded = useSelector(selectLoadingState)
+
+    React.useEffect(() => {
+        dispatch(fetchTweets())
+    }, [dispatch])
+
     return (
         <Paper className={classes.tweetsWrapper} variant='outlined'>
             {/* header: меняется в зависимости от url */}
@@ -70,11 +86,11 @@ export const TwitsBlock: React.FC = (): React.ReactElement => {
                 </Route>
 
                 <Route path={['/', '/home/search']} exact>
-                    <Typography variant='h6'>Твиты</Typography>
+                    <Typography variant='h6'>Главная</Typography>
                 </Route>
 
                 <Route path='/home/tweet'>
-                    <Typography variant='h6'>Твитнуть</Typography>
+                    <Typography variant='h6'>Твиты</Typography>
                 </Route>
             </Paper>
 
@@ -90,11 +106,7 @@ export const TwitsBlock: React.FC = (): React.ReactElement => {
 
             {/* Все Твиты */}
             <Route path='/' exact>
-                <Tweet />
-                <Tweet />
-                <Tweet />
-                <Tweet />
-                <Tweet />
+                {isLoaded ? tweets.map(item => <Tweet key={item._id} {...item} />) : <Preloader />}
             </Route>
         </Paper>
     )

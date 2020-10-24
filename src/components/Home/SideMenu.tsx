@@ -98,7 +98,7 @@ export const SideMenu: React.FC = (): React.ReactElement => {
     return (
         <ul className={classes.sideMenuList}>
             <li className={classes.sideMenuListItem}>
-                <Link to='/home'>
+                <Link to='/'>
                     <IconButton className={classes.logo} aria-label='' color='primary'>
                         <TwitterIcon className={classes.logoIcon} />
                     </IconButton>
