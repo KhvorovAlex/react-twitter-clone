@@ -5,11 +5,11 @@ import { makeStyles } from '@material-ui/core'
 //components
 import Paper from '@material-ui/core/Paper'
 import List from '@material-ui/core/List/List'
+import { Tag } from './Tag'
 //actions
 import { fetchTags } from '../../store/ducks/tags/actionCreators'
 //selectors
 import { selectLoadingState, selectTagsItem } from '../../store/ducks/tags/selectors'
-import { Tag } from './Tag'
 
 const useStylesTags = makeStyles(() => ({
     rightSideBlock: {

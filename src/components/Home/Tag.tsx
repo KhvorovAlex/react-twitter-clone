@@ -3,7 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core'
 //components
-import Divider from '@material-ui/core/Divider'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Typography from '@material-ui/core/Typography'
@@ -11,6 +10,7 @@ import Typography from '@material-ui/core/Typography'
 const useStylesTag = makeStyles(() => ({
     tag: {
         cursor: 'pointer',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
         '& .MuiTypography-body1': {
             fontWeight: 700,
         },
@@ -28,6 +28,7 @@ const useStylesTag = makeStyles(() => ({
             textDecoration: 'none',
         },
     },
+    tagLink: { color: 'inherit', textDecoration: 'none' },
 }))
 
 interface TagProps {
@@ -45,19 +46,18 @@ export const Tag: React.FC<TagProps> = ({
 
     return (
         <React.Fragment key={_id}>
-            <ListItem className={classes.tag}>
-                <Link to={`/home/search?q=`}>
+            <Link to={`/home/search?q=${name}`} className={classes.tagLink}>
+                <ListItem className={classes.tag}>
                     <ListItemText
-                        primary={name}
+                        primary={`#${name}`}
                         secondary={
                             <Typography component='span' variant='body2' color='textSecondary'>
                                 Твитов: {likesCount}
                             </Typography>
                         }
                     />
-                </Link>
-            </ListItem>
-            <Divider component='li' />
+                </ListItem>
+            </Link>
         </React.Fragment>
     )
 }

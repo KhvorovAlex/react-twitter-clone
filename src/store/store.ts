@@ -1,11 +1,15 @@
 //libraries
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { TagsState } from './ducks/tags/contracts/state'
-import { tagsReducer } from './ducks/tags/reducer'
+//state Types
 import { TweetsState } from './ducks/tweets/contracts/state'
+import { TweetState } from './ducks/tweet/contracts/state'
+import { TagsState } from './ducks/tags/contracts/state'
 //reducers
 import { tweetsReducer } from './ducks/tweets/reducer'
+import { tweetReducer } from './ducks/tweet/reducer'
+import { tagsReducer } from './ducks/tags/reducer'
+//saga
 import rootSaga from './saga'
 
 //Подключаем redux devtools
@@ -21,6 +25,7 @@ const composeEnhancers =
 //root-reducer
 const rootReducer = combineReducers({
     tweets: tweetsReducer,
+    tweet: tweetReducer,
     tags: tagsReducer,
 })
 
@@ -28,6 +33,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 export interface RootState {
     tweets: TweetsState
+    tweet: TweetState
     tags: TagsState
 }
 

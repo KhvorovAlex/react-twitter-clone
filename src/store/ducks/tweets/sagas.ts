@@ -10,7 +10,7 @@ import { LoadingState } from './contracts/state'
 // Запрашиваем твиты с сервера
 export function* fetchTweetsRequest() {
     try {
-        const data = yield call(tweetsAPI.getTweet) //получаем твиты с сервера
+        const data = yield call(tweetsAPI.getTweets) //получаем твиты с сервера
         yield put(setTweets(data))
     } catch (error) {
         yield put(setLoadingState(LoadingState.ERROR))

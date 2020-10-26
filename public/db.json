@@ -92,11 +92,34 @@
         }
     ],
 
+    "users": [
+        {
+            "fullName": "Park Spence",
+            "userName": "Patterson",
+            "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+        },
+        {
+            "fullName": "Corina Carey",
+            "userName": "Whitney",
+            "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+        },
+        {
+            "fullName": "Dyer Taylor",
+            "userName": "Harrell",
+            "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+        },
+        {
+            "fullName": "Loraine Barnes",
+            "userName": "Noble",
+            "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+        }
+    ],
+
     "tags": [
-        { "_id": "5f8c01239b6315d09eeefdbf2f3", "name": "#Тэг1", "likesCount": 847 },
-        { "_id": "5f8c05yhs9b6315d09eeefdbf2f3", "name": "#Тэг2", "likesCount": 8210 },
-        { "_id": "5f8c09123b6315d09eeefdbf2f3", "name": "#Тэг3", "likesCount": 315 },
-        { "_id": "5f8c09b6adsfh315d09eeefdbf2f3", "name": "#Тэг4", "likesCount": 1325 }
+        { "_id": "5f8c01239b6315d09eeefdbf2f3", "name": "Тэг1", "likesCount": 847 },
+        { "_id": "5f8c05yhs9b6315d09eeefdbf2f3", "name": "Тэг2", "likesCount": 8210 },
+        { "_id": "5f8c09123b6315d09eeefdbf2f3", "name": "Тэг3", "likesCount": 315 },
+        { "_id": "5f8c09b6adsfh315d09eeefdbf2f3", "name": "Тэг4", "likesCount": 1325 }
     ],
 
     "currentUser": {

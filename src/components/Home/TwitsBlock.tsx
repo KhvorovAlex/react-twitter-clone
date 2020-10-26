@@ -4,16 +4,17 @@ import { makeStyles } from '@material-ui/core'
 import { Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 //components
-import { Paper } from '@material-ui/core'
+import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { BackButton } from './BackButton'
 import { Tweet } from './Tweet'
 import { AddTweetForm } from './AddTweetForm'
+import Preloader from '../Preloader'
 //actions
 import { fetchTweets } from '../../store/ducks/tweets/actionCreators'
 //selectors
 import { selectTweetsItem, selectLoadingState } from '../../store/ducks/tweets/selectors'
-import Preloader from '../Preloader'
+import FullTweet from './FullTweet'
 
 const useStylesTwitsBlock = makeStyles(() => ({
     tweetsWrapper: {
@@ -85,17 +86,17 @@ export const TwitsBlock: React.FC = (): React.ReactElement => {
                     <BackButton />
                 </Route>
 
-                <Route path={['/', '/home/search']} exact>
-                    <Typography variant='h6'>Главная</Typography>
+                <Route path={['/home', '/home/search']} exact>
+                    <Typography variant='h6'>Твиты</Typography>
                 </Route>
 
                 <Route path='/home/tweet'>
-                    <Typography variant='h6'>Твиты</Typography>
+                    <Typography variant='h6'>Твитнуть</Typography>
                 </Route>
             </Paper>
 
             {/* Блок для написания Твита */}
-            <Route path={['/', '/home/search']} exact>
+            <Route path={['/home', '/home/search']} exact>
                 <Paper>
                     <div className={classes.addForm}>
                         <AddTweetForm />
@@ -105,8 +106,12 @@ export const TwitsBlock: React.FC = (): React.ReactElement => {
             </Route>
 
             {/* Все Твиты */}
-            <Route path='/' exact>
+            <Route path='/home' exact>
                 {isLoaded ? tweets.map(item => <Tweet key={item._id} {...item} />) : <Preloader />}
+            </Route>
+
+            <Route path='/home/tweet/:id' exact>
+                <FullTweet />
             </Route>
         </Paper>
     )
