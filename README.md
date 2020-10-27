@@ -21,3 +21,5 @@
 -   useEffect
 -   useDispatch
 -   useSelector
+-   useHistory
+-   useParams
