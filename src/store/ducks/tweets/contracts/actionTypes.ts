@@ -1,6 +1,6 @@
 import { Action } from 'redux'
 import { TweetsActionsType } from '../actionCreators'
-import { LoadingState, Tweet, TweetsState } from './state'
+import { addTweetLoadingState, LoadingState, Tweet, TweetsState } from './state'
 
 export interface SetTweetsActionIT extends Action<TweetsActionsType> {
     type: TweetsActionsType.SET_TWEETS
@@ -25,3 +25,16 @@ export interface SetTweetsLoadingStateActionIT extends Action<TweetsActionsType>
     type: TweetsActionsType.SET_LOADING_STATE
     payload: LoadingState
 }
+
+export interface SetAddTweetLoadingStateActionIT extends Action<TweetsActionsType> {
+    type: TweetsActionsType.SET_ADD_TWEET_LOADING_STATE
+    payload: addTweetLoadingState
+}
+
+export type TweetsActions =
+    | SetTweetsActionIT
+    | SetTweetsLoadingStateActionIT
+    | FetchTweetsActionIT
+    | SetFetchAddTweetActionIT
+    | FetchAddTweetActionIT
+    | SetAddTweetLoadingStateActionIT

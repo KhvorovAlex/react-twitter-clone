@@ -1,11 +1,12 @@
 import {
     FetchAddTweetActionIT,
     FetchTweetsActionIT,
+    SetAddTweetLoadingStateActionIT,
     SetFetchAddTweetActionIT,
     SetTweetsActionIT,
     SetTweetsLoadingStateActionIT,
 } from './contracts/actionTypes'
-import { LoadingState, Tweet, TweetsState } from './contracts/state'
+import { addTweetLoadingState, LoadingState, Tweet, TweetsState } from './contracts/state'
 
 //actions types
 export enum TweetsActionsType {
@@ -14,6 +15,7 @@ export enum TweetsActionsType {
     FETCH_ADD_TWEET = 'tweets/FETCH_ADD_TWEET',
     SET_FETCH_ADD_TWEET = 'tweets/SET_FETCH_ADD_TWEET',
     SET_LOADING_STATE = 'tweets/SET_LOADING_STATE',
+    SET_ADD_TWEET_LOADING_STATE = 'tweets/SET_ADD_TWEET_LOADING_STATE',
 }
 
 //actions
@@ -41,8 +43,9 @@ export const setLoadingState = (payload: LoadingState): SetTweetsLoadingStateAct
     payload,
 })
 
-export type TweetsActions =
-    | SetTweetsActionIT
-    | SetTweetsLoadingStateActionIT
-    | FetchTweetsActionIT
-    | SetFetchAddTweetActionIT
+export const setAddTweetLoadingState = (
+    payload: addTweetLoadingState
+): SetAddTweetLoadingStateActionIT => ({
+    type: TweetsActionsType.SET_ADD_TWEET_LOADING_STATE,
+    payload,
+})

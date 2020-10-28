@@ -2,11 +2,17 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 //server
 import { tweetsAPI } from '../../../api/tweetsApi'
-//actions
-import { setFetchAddTweet, setLoadingState, setTweets, TweetsActionsType } from './actionCreators'
+//action creators
+import {
+    setAddTweetLoadingState,
+    setFetchAddTweet,
+    setLoadingState,
+    setTweets,
+    TweetsActionsType,
+} from './actionCreators'
 import { FetchAddTweetActionIT } from './contracts/actionTypes'
-//state request
-import { LoadingState, Tweet } from './contracts/state'
+//state
+import { addTweetLoadingState, LoadingState, Tweet } from './contracts/state'
 
 // Запрашиваем твиты с сервера
 export function* fetchTweetsRequest() {
@@ -33,7 +39,7 @@ export function* fetchAddTweetRequest({ payload }: FetchAddTweetActionIT) {
         const item = yield call(tweetsAPI.fetchAddTweet, data) //получаем ответ с сервера, в виде объекта
         yield put(setFetchAddTweet(item)) // добавляем полученный ответ (объект) в редакс
     } catch (error) {
-        yield put(setLoadingState(LoadingState.ERROR))
+        yield put(setAddTweetLoadingState(addTweetLoadingState.ERROR))
     }
 }
 
