@@ -1,5 +1,6 @@
 //libraries
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core'
 //components
@@ -10,6 +11,8 @@ import IconButton from '@material-ui/core/IconButton'
 import TextareaAutosize from '@material-ui/core/TextareaAutosize'
 import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined'
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedOutlined'
+//actions
+import { fetchAddTweet } from '../../store/ducks/tweets/actionCreators'
 
 const useStyleAddTweetForm = makeStyles(theme => ({
     addFormBody: {
@@ -70,7 +73,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
     maxRows,
 }: AddTweetFormProps): React.ReactElement => {
     const classes = useStyleAddTweetForm()
-
+    const dispatch = useDispatch()
     const [text, setText] = React.useState<string>('')
     const textLimitPercent = Math.round((text.length / MAX_LENGHT) * 100)
     const textCount = MAX_LENGHT - text.length
@@ -82,6 +85,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
     }
 
     const handleClickAddTweet = (): void => {
+        dispatch(fetchAddTweet(text))
         setText('')
     }
 
