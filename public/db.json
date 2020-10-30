@@ -1,54 +1,44 @@
 {
   "tweets": [
     {
-      "id": "1",
-      "_id": "5f8c09b6c5a242cbb3ba8e1d",
-      "text": "In adipisicing esse anim deserunt do magna cupidatat sit. Reprehenderit fugiat magna dolore id elit fugiat anim adipisicing sint ullamco nisi laboris aliqua irure. Eiusmod et ullamco deserunt laboris reprehenderit qui deserunt enim consequat mollit consectetur sunt. Adipisicing incididunt esse duis amet. Amet adipisicing fugiat enim quis aliqua dolor Lorem laborum elit do.",
+      "_id": "bib37c5bxvn",
+      "text": "Это тестовый твит",
       "user": {
-        "fullName": "Bonner Sandoval",
-        "userName": "Shirley",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?2"
-      }
+        "fullName": "Test User",
+        "userName": "Testuser",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?6"
+      },
+      "id": 1
     },
     {
-      "id": "2",
-      "_id": "5f8c09b685080528cb2e5d60",
-      "text": "Commodo sint dolor tempor sit velit aute voluptate ipsum nostrud cillum dolor elit adipisicing nulla. Culpa minim ad id nostrud. Proident elit ea labore aliquip cillum magna magna fugiat minim. Lorem ipsum nulla cillum in mollit sit excepteur occaecat sunt aute qui. In incididunt reprehenderit consequat proident minim quis tempor id dolore est reprehenderit duis nostrud.",
-      "user": {
-        "fullName": "Patrice Best",
-        "userName": "Jaime",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?3"
-      }
-    },
-    {
-      "id": "3",
-      "_id": "5f8c09b6asdfsadfc5a242cbb3ba8e1d",
-      "text": "test twit",
-      "user": {
-        "fullName": "Саша Хворов",
-        "userName": "Shirley",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?2"
-      }
-    },
-    {
-      "_id": "afzdww2825e",
-      "text": "Хеллоу май диар френд",
+      "_id": "gql2o1vsus",
+      "text": "Добавим еще один твит!",
       "user": {
         "fullName": "Test Uuser",
         "userName": "Testuser",
         "avatarUrl": "https://source.unsplash.com/random/100x100?6"
       },
-      "id": "dmQ04cp"
+      "id": 2
     },
     {
-      "_id": "qe6s8enql8",
-      "text": "ха ва ю мэн?",
+      "_id": "7hd2bxt4cwv",
+      "text": "Новый твит",
       "user": {
-        "fullName": "Test Uuser",
+        "fullName": "Test User",
         "userName": "Testuser",
         "avatarUrl": "https://source.unsplash.com/random/100x100?6"
       },
-      "id": "8YJgpf8"
+      "id": 3
+    },
+    {
+      "_id": "qrcm4xao3vc",
+      "text": "Крайний твит",
+      "user": {
+        "fullName": "Test User",
+        "userName": "Testuser",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?6"
+      },
+      "id": 4
     }
   ],
   "users": [

@@ -11,7 +11,7 @@ export interface SetTweetActionIT extends Action<TweetActionsType> {
 
 export interface FetchTweetActionIT extends Action<TweetActionsType> {
     type: TweetActionsType.FETCH_TWEET
-    payload?: Tweet['_id']
+    payload: Tweet['_id']
 }
 
 export interface SetTweetLoadingStateActionIT extends Action<TweetActionsType> {

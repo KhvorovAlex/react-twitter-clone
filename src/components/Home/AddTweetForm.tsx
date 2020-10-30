@@ -1,6 +1,6 @@
 //libraries
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core'
 //components
@@ -13,6 +13,11 @@ import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined'
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedOutlined'
 //actions
 import { fetchAddTweet } from '../../store/ducks/tweets/actionCreators'
+import Alert from '@material-ui/lab/Alert'
+//selectors
+import { selectAddTweetLoadingState } from '../../store/ducks/tweets/selectors'
+//selectors Types
+import { addTweetLoadingState } from '../../store/ducks/tweets/contracts/state'
 
 const useStyleAddTweetForm = makeStyles(theme => ({
     addFormBody: {
@@ -74,6 +79,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
 }: AddTweetFormProps): React.ReactElement => {
     const classes = useStyleAddTweetForm()
     const dispatch = useDispatch()
+    const addTweetState = useSelector(selectAddTweetLoadingState)
     const [text, setText] = React.useState<string>('')
     const textLimitPercent = Math.round((text.length / MAX_LENGHT) * 100)
     const textCount = MAX_LENGHT - text.length
@@ -137,15 +143,33 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
                         </>
                     )}
                     <Button
+                        style={{ width: '102px' }}
                         onClick={handleClickAddTweet}
-                        disabled={text.length > MAX_LENGHT}
+                        disabled={
+                            addTweetState === addTweetLoadingState.LOADING ||
+                            !text ||
+                            text.length > MAX_LENGHT
+                        }
                         color='primary'
                         variant='contained'
                     >
-                        Твитнуть
+                        {addTweetState === addTweetLoadingState.LOADING ? (
+                            <CircularProgress color='inherit' size={16} />
+                        ) : (
+                            'Твитнуть'
+                        )}
                     </Button>
                 </div>
             </div>
+
+            {addTweetState === addTweetLoadingState.ERROR && (
+                <Alert severity='error'>
+                    Ошибка при добавлении твита{' '}
+                    <span aria-label='emoji-plak' role='img'>
+                        😞
+                    </span>
+                </Alert>
+            )}
         </div>
     )
 }

@@ -31,7 +31,7 @@ export function* fetchAddTweetRequest({ payload }: FetchAddTweetActionIT) {
             _id: Math.random().toString(36).substr(2),
             text: payload,
             user: {
-                fullName: 'Test Uuser',
+                fullName: 'Test User',
                 userName: 'Testuser',
                 avatarUrl: 'https://source.unsplash.com/random/100x100?6',
             },
